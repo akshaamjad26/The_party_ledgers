@@ -1,0 +1,1704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#202c43">
+<title>The Party Ledger — Celebration Issue</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+    --navy: #202c43;
+    --navy2: #35445e;
+    --blue: #dce9f3;
+    --pink: #efd9d8;
+    --cream: #faf8f5;
+    --white: #fff;
+    --muted: #818795;
+    --border: #e9e6e4;
+    --green: #e2eee5;
+    --green-text: #32684a;
+    --red: #f9e7e5;
+    --red-text: #a44747;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+}
+
+button, input, select { font: inherit; }
+button { cursor: pointer; touch-action: manipulation; }
+
+header {
+    background: var(--navy);
+    color: white;
+    padding: 20px max(18px, calc((100% - 1150px) / 2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo, .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    letter-spacing: .2px;
+}
+
+.logo span, .footer-logo span { color: #eac9cc; }
+
+.header-note {
+    color: #d6dce5;
+    letter-spacing: 2px;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 30px 22px 48px;
+}
+
+/* CELEBRATION ISSUE — MAGAZINE COVER */
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #faf4ee;
+    border: 1px solid #e8dcd5;
+    border-radius: 3px;
+    padding: clamp(25px, 5vw, 58px);
+    margin: 24px 0 48px;
+    text-align: left;
+    min-height: 470px;
+}
+
+.hero::before {
+    content: "PARTY";
+    position: absolute;
+    right: -25px;
+    top: 95px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(100px, 20vw, 230px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -12px;
+    color: rgba(32, 44, 67, .045);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "✳";
+    position: absolute;
+    right: 11%;
+    top: 28%;
+    font-size: clamp(65px, 10vw, 115px);
+    color: #c89b9e;
+    font-weight: 400;
+    transform: rotate(-15deg);
+    opacity: .8;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hero-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-bottom: 14px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d9c9c3;
+}
+
+.hero-topline span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-edition { color: #a06f78; }
+
+.eyebrow, .sectionNo {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a77e87;
+    font-weight: 700;
+}
+
+.hero .eyebrow {
+    display: inline-block;
+    background: #efd9d8;
+    color: #704e57;
+    padding: 9px 12px;
+    margin-bottom: 22px;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    max-width: 750px;
+    margin: 0;
+    font-size: clamp(49px, 9vw, 104px);
+    font-weight: 400;
+    letter-spacing: -3px;
+    line-height: .96;
+    color: #202c43;
+}
+
+.hero h1 em {
+    color: #a16f79;
+    font-weight: 400;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.hero-copy {
+    max-width: 390px;
+    margin: 0;
+    color: #656778;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.hero-stamp {
+    width: 105px;
+    height: 105px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    flex-shrink: 0;
+    border: 1px solid #b48a91;
+    border-radius: 50%;
+    color: #76535c;
+    text-align: center;
+    transform: rotate(9deg);
+    font-size: 8px;
+    line-height: 1.8;
+    letter-spacing: 1.4px;
+    background: #f3e3df;
+}
+
+.hero-stamp strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.hero-caption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #d9c9c3;
+    color: #5d6576;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.hero-caption::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #a16f79;
+}
+
+/* BUTTONS */
+.btn {
+    border: 0;
+    background: var(--navy);
+    color: white;
+    padding: 12px 17px;
+    border-radius: 9px;
+    transition: .2s;
+    min-height: 42px;
+}
+
+.btn:hover { opacity: .9; transform: translateY(-1px); }
+.btn.light { background: var(--blue); color: var(--navy); }
+.btn.pink { background: var(--pink); color: var(--navy); }
+.btn.outline { background: white; border: 1px solid var(--border); color: var(--navy); }
+.btn.danger { background: var(--red); color: var(--red-text); }
+.btn.small { padding: 8px 11px; font-size: 12px; min-height: 35px; white-space: nowrap; }
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 23px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(32, 44, 67, .025);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.stat {
+    border-radius: 12px;
+    padding: 18px;
+    background: var(--blue);
+    min-width: 0;
+}
+
+.stat:nth-child(2) { background: var(--pink); }
+.stat:nth-child(3) { background: #f1ede8; }
+.stat:nth-child(4) { background: var(--green); }
+
+.stat small { color: #596477; }
+
+.stat strong {
+    display: block;
+    font-size: clamp(17px, 2vw, 23px);
+    margin-top: 10px;
+    overflow-wrap: anywhere;
+}
+
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.between { justify-content: space-between; }
+
+input, select {
+    width: 100%;
+    border: 1px solid var(--border);
+    padding: 12px;
+    border-radius: 8px;
+    background: white;
+    color: var(--navy);
+    outline: none;
+    min-width: 0;
+    min-height: 43px;
+}
+
+input:focus, select:focus {
+    border-color: #8ea9c2;
+    box-shadow: 0 0 0 3px rgba(142, 169, 194, .12);
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 13px 0 7px;
+}
+
+.formgrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 16px;
+}
+
+.full { grid-column: 1 / -1; }
+
+.tablewrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 590px;
+}
+
+th {
+    background: #f5f5f5;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+td { font-size: 12px; vertical-align: middle; }
+td select { min-width: 130px; padding: 8px; font-size: 12px; }
+
+.tag {
+    display: inline-block;
+    background: var(--blue);
+    padding: 5px 9px;
+    border-radius: 30px;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status.confirmed { background: var(--green); color: var(--green-text); }
+.status.pending { background: #f8e9d8; color: #93652b; }
+
+.person {
+    display: inline-flex;
+    align-items: center;
+    background: #f2f3f5;
+    padding: 8px 10px;
+    border-radius: 7px;
+    margin: 5px;
+    font-size: 12px;
+}
+
+.person button {
+    border: 0;
+    background: none;
+    margin-left: 9px;
+    color: #aa5656;
+    font-size: 18px;
+}
+
+.empty {
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.party {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    min-width: 0;
+}
+
+.party h3 { margin: 9px 0; }
+.party small { color: var(--muted); }
+
+.partygrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(235px, 100%), 1fr));
+    gap: 15px;
+}
+
+.settle {
+    background: #f7f8fa;
+    padding: 14px;
+    border-radius: 9px;
+    margin: 9px 0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.notice { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.hidden { display: none !important; }
+
+.summaryhead {
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.summaryhead h2 { font-size: clamp(29px, 5vw, 38px); margin: 8px; }
+.calculated { background: var(--blue); padding: 14px; border-radius: 9px; margin-top: 14px; }
+.status-key { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 18px; }
+
+.checklabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 6px 12px 6px 0;
+    font-weight: 500;
+}
+
+.checklabel input {
+    width: 17px;
+    height: 17px;
+    min-height: 0;
+    accent-color: var(--navy);
+}
+
+.section-rule { border: 0; border-top: 1px solid var(--border); margin: 20px 0; }
+
+footer {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 32px 20px 24px;
+    margin-top: 5px;
+}
+
+.footer-logo { font-size: 23px; }
+.footer-line { width: 55px; height: 2px; background: #eac9cc; margin: 16px auto; }
+
+.footer-tagline {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    color: #e1e5ec;
+    line-height: 1.9;
+}
+
+.footer-bottom {
+    margin-top: 24px;
+    padding-top: 17px;
+    border-top: 1px solid rgba(255, 255, 255, .13);
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    color: #bfc7d3;
+}
+
+#summary .card { padding: clamp(16px, 3vw, 30px); }
+
+.report-kicker {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a77e87;
+    font-weight: 700;
+}
+
+.report-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.report-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.report-stat { background: #f5f7fa; padding: 13px; border-radius: 9px; }
+.report-stat:nth-child(2) { background: #f8eeee; }
+.report-stat:nth-child(3) { background: #edf4ef; }
+
+.report-stat span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+}
+
+.report-stat strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.report-footnote { font-size: 10px; color: var(--muted); line-height: 1.7; }
+.print-only { display: none; }
+
+/* CREATOR WATERMARK */
+.creator-watermark {
+    position: fixed;
+    right: 14px;
+    bottom: 12px;
+    z-index: 50;
+    padding: 7px 11px;
+    border: 1px solid rgba(32, 44, 67, .13);
+    border-radius: 999px;
+    background: rgba(250, 248, 245, .91);
+    color: #35445e;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    box-shadow: 0 3px 12px rgba(32, 44, 67, .08);
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+}
+
+.creator-watermark span { color: #a77e87; }
+
+@media (max-width: 850px) {
+    .grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    header { padding: 15px 14px; }
+    .logo { font-size: 21px; }
+    .header-note { font-size: 9px; letter-spacing: 1.4px; }
+
+    .container { padding: 20px 12px 30px; }
+    .card { padding: 16px; border-radius: 12px; }
+
+    .grid, .formgrid, .grid.four { grid-template-columns: 1fr; }
+
+    .hero {
+        min-height: 0;
+        padding: 24px 19px 26px;
+        margin: 14px 0 32px;
+    }
+
+    .hero::before {
+        top: 125px;
+        right: -12px;
+        font-size: 105px;
+        letter-spacing: -7px;
+    }
+
+    .hero::after {
+        right: 9%;
+        top: 32%;
+        font-size: 65px;
+    }
+
+    .hero-topline { margin-bottom: 26px; }
+
+    .hero-topline span {
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+    .hero .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+        line-height: 1.7;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(46px, 12.5vw, 70px);
+        letter-spacing: -1.8px;
+    }
+
+    .hero-bottom {
+        align-items: flex-end;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .hero-copy { font-size: 12px; line-height: 1.8; }
+
+    .hero-stamp {
+        width: 76px;
+        height: 76px;
+        font-size: 7px;
+        flex-shrink: 0;
+    }
+
+    .hero-stamp strong { font-size: 18px; }
+
+    .hero-caption {
+        font-size: 8px;
+        letter-spacing: 1.1px;
+        line-height: 1.8;
+    }
+
+    .toolbar { align-items: flex-start; }
+    .toolbar h2 { font-size: 23px; }
+    .toolbar .row { width: 100%; }
+    .toolbar .row .btn { flex: 1; }
+
+    .stat { padding: 15px; }
+    .stat strong { font-size: 22px; }
+    .party { padding: 16px; }
+    .btn { padding: 11px 13px; }
+    .full { grid-column: auto; }
+
+    .report-stats { grid-template-columns: 1fr; }
+
+    .report-stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .report-stat strong { margin: 0; text-align: right; }
+    .summaryhead h2 { overflow-wrap: anywhere; }
+    footer { padding: 28px 15px; }
+    .footer-tagline { font-size: 10px; }
+
+    .creator-watermark {
+        right: 8px;
+        bottom: 8px;
+        font-size: 8px;
+        padding: 6px 9px;
+    }
+}
+
+@media print {
+    @page { size: A4; margin: 14mm; }
+
+    body {
+        background: #fff !important;
+        color: #202c43 !important;
+        font-size: 10pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    header, .hero, footer, #home, #editor, .no-print {
+        display: none !important;
+    }
+
+    .container { padding: 0; max-width: 100%; margin: 0; }
+    #summary { display: block !important; }
+    .hidden { display: none !important; }
+
+    #summary .card {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .summaryhead {
+        border-bottom: 2px solid #202c43;
+        padding: 0 0 16px;
+        margin-bottom: 18px;
+    }
+
+    .summaryhead h2 { font-size: 28pt; margin: 7px 0; }
+    .summaryhead .eyebrow { font-size: 8pt; }
+    .report-stats { grid-template-columns: repeat(3, 1fr); }
+
+    .report-stat { border: 1px solid #ddd; break-inside: avoid; }
+    .report-stat strong { font-size: 12pt; }
+
+    h3 { font-size: 15pt; margin: 18px 0 8px; break-after: avoid; }
+
+    .tablewrap { overflow: visible; }
+
+    table {
+        width: 100%;
+        min-width: 0;
+        table-layout: auto;
+        font-size: 8pt;
+    }
+
+    th, td {
+        padding: 6px 5px;
+        border-bottom: 1px solid #ddd;
+        font-size: 8pt;
+        overflow-wrap: anywhere;
+    }
+
+    th { background: #edf1f5 !important; }
+
+    .settle, .report-box {
+        break-inside: avoid;
+        border: 1px solid #ddd;
+        background: #f8f9fb !important;
+    }
+
+    .print-only { display: block; }
+    .report-footnote { margin-top: 18px; border-top: 1px solid #ddd; padding-top: 10px; }
+    .status { border: 1px solid #ddd; }
+
+    .creator-watermark {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        background: white;
+        border: 1px solid #ddd;
+        box-shadow: none;
+        color: #35445e;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="creator-watermark">CURATED BY <span>AKSHA AMJAD</span></div>
+
+<header>
+    <div>
+        <div class="logo">The party <span>ledger.</span></div>
+        <div class="header-note">GOOD TIMES, CLEAR SPLITS</div>
+    </div>
+    <button class="btn light no-print" onclick="goHome()">All Parties ↗</button>
+</header>
+
+<main class="container">
+
+<section class="hero no-print">
+    <div class="hero-topline">
+        <span class="hero-edition">The Celebration Issue</span>
+        <span>Celebrations · Edition No. 01</span>
+    </div>
+
+    <div class="eyebrow">A LITTLE ORGANISATION, A LOT OF MEMORIES</div>
+
+    <h1>Celebrate<br>more.<br><em>Calculate less.</em></h1>
+
+    <div class="hero-bottom">
+        <p class="hero-copy">
+            For the plans we make, the bills we share, and the memories
+            that stay long after the party. Keep every expense together,
+            make the final split simple, and leave more room for the good stuff.
+        </p>
+
+        <div class="hero-stamp">
+            MADE FOR<br>
+            THE GOOD<br>
+            <strong>days</strong>
+        </div>
+    </div>
+
+    <div class="hero-caption">Good friends. Little details. Beautiful memories.</div>
+</section>
+
+<section id="home">
+    <div class="toolbar">
+        <h2>Your celebrations ✳</h2>
+        <button class="btn" onclick="newParty()">+ Create Party</button>
+    </div>
+    <div class="partygrid" id="partyList"></div>
+</section>
+
+<section id="editor" class="hidden">
+    <div class="toolbar">
+        <div>
+            <div class="eyebrow">YOUR PARTY WORKSPACE</div>
+            <h2 id="partyTitle">Your Party</h2>
+        </div>
+        <div class="row">
+            <button class="btn outline" onclick="goHome()">← Back</button>
+            <button class="btn pink" onclick="showSummary()">Final Summary ↗</button>
+        </div>
+    </div>
+
+    <div class="grid four">
+        <div class="stat"><small>All expenses</small><strong id="total">Rs. 0.00</strong></div>
+        <div class="stat"><small>Confirmed total</small><strong id="confirmedTotal">Rs. 0.00</strong></div>
+        <div class="stat"><small>Not confirmed</small><strong id="pendingTotal">Rs. 0.00</strong></div>
+        <div class="stat"><small>Confirmed items</small><strong id="confirmedCount">0 / 0</strong></div>
+    </div>
+
+    <div class="card" style="margin-top:22px">
+        <div class="sectionNo">DETAILS · 01</div>
+        <h2>Party details</h2>
+        <div class="formgrid">
+            <div>
+                <label for="pname">Party name</label>
+                <input id="pname" oninput="updateDetails()" placeholder="Girls' Party">
+            </div>
+            <div>
+                <label for="pdate">Party date</label>
+                <input type="date" id="pdate" onchange="updateDetails()">
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="sectionNo">THE GUEST LIST · 02</div>
+        <h2>Your girls</h2>
+        <p class="notice">Add everyone sharing the party expenses.</p>
+        <div class="row">
+            <input id="memberInput" placeholder="Enter friend's name"
+                   style="flex:1;min-width:170px"
+                   onkeydown="if(event.key==='Enter')addMember()">
+            <button class="btn" onclick="addMember()">+ Add Girl</button>
+        </div>
+        <div id="memberList" style="margin-top:15px"></div>
+    </div>
+
+    <div class="card">
+        <div class="sectionNo">THE BILL BOOK · 03</div>
+        <h2>Add an expense</h2>
+
+        <div class="formgrid">
+            <div>
+                <label for="item">Item / description</label>
+                <input id="item" placeholder="e.g. Party cups">
+            </div>
+
+            <div>
+                <label for="category">Category</label>
+                <select id="category">
+                    <option>Food & Drinks</option>
+                    <option>Cake & Desserts</option>
+                    <option>Decorations</option>
+                    <option>Venue</option>
+                    <option>Outfits</option>
+                    <option>Gifts</option>
+                    <option>Transport</option>
+                    <option>Photography</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="unitPrice">Price per item (LKR)</label>
+                <input id="unitPrice" type="number" min=".01" step=".01"
+                       placeholder="e.g. 289" oninput="previewTotal()">
+            </div>
+
+            <div>
+                <label for="quantity">Quantity</label>
+                <input id="quantity" type="number" min="1" step="1"
+                       value="1" oninput="previewTotal()">
+            </div>
+
+            <div class="full">
+                <div id="totalPreview" class="calculated">
+                    Price × quantity = <strong>Rs. 0.00</strong>
+                </div>
+            </div>
+
+            <div class="full">
+                <label for="itemStatus">Confirmation status</label>
+                <select id="itemStatus">
+                    <option value="pending">Not Confirmed</option>
+                    <option value="confirmed">Confirmed</option>
+                </select>
+                <p class="notice">Confirm an item once it is finalised.</p>
+            </div>
+
+            <div class="full">
+                <label>Who shares this expense?</label>
+                <div id="splitMembers" class="status-key"></div>
+                <p class="notice">
+                    Select the girls who share this bill. The total is divided
+                    equally among them.
+                </p>
+            </div>
+        </div>
+
+        <button class="btn" onclick="addExpense()">+ Save Expense</button>
+    </div>
+
+    <div class="card">
+        <div class="sectionNo">RECORDED BILLS · 04</div>
+        <div class="row between">
+            <h2>Expense records</h2>
+            <span class="tag" id="expenseLabel">0 items</span>
+        </div>
+
+        <div class="status-key">
+            <span><span class="status confirmed">✓ Confirmed</span> Finalised item</span>
+            <span><span class="status pending">◷ Not Confirmed</span> Still pending</span>
+        </div>
+
+        <div class="tablewrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th><th>Category</th><th>Price × Qty</th>
+                        <th>Total</th><th>Status</th><th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expenseRows"></tbody>
+                <tfoot>
+                    <tr><th colspan="3">ALL EXPENSES</th><th id="expenseGrandTotal">Rs. 0.00</th><th colspan="2"></th></tr>
+                    <tr><th colspan="3">CONFIRMED TOTAL</th><th id="expenseConfirmedTotal">Rs. 0.00</th><th colspan="2"></th></tr>
+                    <tr><th colspan="3">NOT CONFIRMED TOTAL</th><th id="expensePendingTotal">Rs. 0.00</th><th colspan="2"></th></tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="calculated">
+            <div class="row between">
+                <strong>All expense calculations</strong>
+                <strong id="expenseFinalTotal">Rs. 0.00</strong>
+            </div>
+            <p class="notice">Totals update when you change an item's confirmation status.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="sectionNo">MONEY TRACKER · 05</div>
+        <h2>Money & Payments</h2>
+        <p class="notice">
+            Record money already paid towards the party. A girl can have multiple payment records.
+        </p>
+
+        <div class="formgrid">
+            <div>
+                <label for="moneyPerson">Who paid?</label>
+                <select id="moneyPerson"></select>
+            </div>
+            <div>
+                <label for="moneyAmount">Amount paid (LKR)</label>
+                <input id="moneyAmount" type="number" min=".01" step=".01" placeholder="e.g. 2000">
+            </div>
+        </div>
+
+        <button class="btn" onclick="addPayment()">+ Record Payment</button>
+
+        <div class="tablewrap" style="margin-top:20px">
+            <table>
+                <thead><tr><th>Who paid</th><th>Money (LKR)</th><th>Action</th></tr></thead>
+                <tbody id="paymentRows"></tbody>
+                <tfoot><tr><th>Total paid</th><th id="paymentsGrandTotal">Rs. 0.00</th><th></th></tr></tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="sectionNo">FINAL CALCULATION · 06</div>
+        <h2>Settlement calculator</h2>
+        <p class="notice">
+            Only confirmed items are included in settlement. Unconfirmed items are shown separately.
+        </p>
+        <div id="settlements"></div>
+    </div>
+</section>
+
+<section id="summary" class="hidden">
+    <div class="toolbar no-print">
+        <button class="btn outline" onclick="showEditor()">← Edit Bills</button>
+        <div class="row">
+            <button class="btn light" onclick="downloadSummary()">Download report</button>
+            <button class="btn" onclick="window.print()">Print / Save PDF ↓</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="summaryhead">
+            <div class="eyebrow">THE PARTY LEDGER · OFFICIAL SUMMARY</div>
+            <h2 id="sTitle"></h2>
+            <p id="sDate"></p>
+            <small>EXPENSE REPORT & SHARED BILL</small>
+        </div>
+
+        <div class="report-stats">
+            <div class="report-stat"><span>All expenses</span><strong id="sTotal"></strong></div>
+            <div class="report-stat"><span>Confirmed total</span><strong id="sConfirmedTotal"></strong></div>
+            <div class="report-stat"><span>Pending total</span><strong id="sPendingTotal"></strong></div>
+        </div>
+
+        <div class="report-box">
+            <div class="report-kicker">AT A GLANCE</div>
+            <div id="sOverview" class="notice" style="margin-top:8px"></div>
+        </div>
+
+        <h3>01 · Expense breakdown</h3>
+        <div class="tablewrap">
+            <table>
+                <thead><tr><th>Item</th><th>Category</th><th>Price × Qty</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody id="sExpenses"></tbody>
+                <tfoot>
+                    <tr><th colspan="3">ALL EXPENSES</th><th id="sTotalFoot"></th><th></th></tr>
+                    <tr><th colspan="3">CONFIRMED TOTAL</th><th id="sConfirmedFoot"></th><th></th></tr>
+                    <tr><th colspan="3">NOT CONFIRMED TOTAL</th><th id="sPendingFoot"></th><th></th></tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>02 · Money & payments</h3>
+        <div class="tablewrap">
+            <table>
+                <thead><tr><th>Who paid</th><th>Amount</th></tr></thead>
+                <tbody id="sPayments"></tbody>
+                <tfoot><tr><th>Total paid</th><th id="sPaymentsTotal"></th></tr></tfoot>
+            </table>
+        </div>
+
+        <h3>03 · Individual payment summary</h3>
+        <div class="tablewrap">
+            <table>
+                <thead><tr><th>Girl</th><th>Paid</th><th>Confirmed share</th><th>Balance</th></tr></thead>
+                <tbody id="sMembers"></tbody>
+            </table>
+        </div>
+
+        <h3>04 · Who pays whom?</h3>
+        <div id="sSettlements"></div>
+
+        <div class="report-box">
+            <div class="report-kicker">SETTLEMENT NOTE</div>
+            <p class="notice">
+                Balances are calculated from recorded payments minus each person's
+                share of confirmed expenses. Pending expenses are excluded until confirmed.
+            </p>
+        </div>
+
+        <p class="report-footnote">
+            THE PARTY LEDGER · GOOD FRIENDS. LITTLE DETAILS. BEAUTIFUL MEMORIES.<br>
+            Generated from your browser on <span id="sGenerated"></span>.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-logo">the party <span>ledger.</span></div>
+    <div class="footer-line"></div>
+    <div class="footer-tagline">
+        GOOD FRIENDS. LITTLE DETAILS. BEAUTIFUL MEMORIES.<br>
+        EVERY SHARED MOMENT, ACCOUNTED FOR.
+    </div>
+    <div class="footer-bottom">MADE WITH ♡ FOR THE GIRLS · © 2026 THE PARTY LEDGER</div>
+</footer>
+
+<script>
+const KEY = "party-ledger-complete-v3";
+
+let parties = [];
+
+try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || "[]");
+    parties = Array.isArray(saved) ? saved : [];
+} catch {
+    parties = [];
+}
+
+let current = null;
+const $ = id => document.getElementById(id);
+
+function money(n) {
+    return "Rs. " + (Number(n || 0)).toLocaleString("en-LK", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+function safe(v) {
+    return String(v ?? "").replace(/[&<>"']/g, c => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    }[c]));
+}
+
+function makeId() {
+    return crypto.randomUUID
+        ? crypto.randomUUID()
+        : Date.now().toString(36) + Math.random().toString(36).slice(2);
+}
+
+function save() {
+    try {
+        localStorage.setItem(KEY, JSON.stringify(parties));
+    } catch {
+        alert("Unable to save. Check your browser storage.");
+    }
+}
+
+function party() {
+    return parties.find(p => p.id === current);
+}
+
+function normaliseParty(p) {
+    if (!Array.isArray(p.members)) p.members = [];
+    if (!Array.isArray(p.expenses)) p.expenses = [];
+    if (!Array.isArray(p.payments)) p.payments = [];
+
+    p.expenses.forEach(e => {
+        if (!Array.isArray(e.split)) e.split = [];
+        if (!e.category) e.category = "Other";
+        if (!e.status) e.status = "confirmed";
+
+        if (!Number.isFinite(Number(e.quantity)) || Number(e.quantity) < 1) {
+            e.quantity = 1;
+        }
+
+        if (!Number.isFinite(Number(e.unitPrice))) {
+            e.unitPrice = Number(e.amount || 0) / Number(e.quantity);
+        }
+
+        e.amount = Math.round(Number(e.amount || 0) * 100) / 100;
+    });
+
+    return p;
+}
+
+function section(id) {
+    ["home", "editor", "summary"].forEach(x => {
+        $(x).classList.toggle("hidden", x !== id);
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function goHome() {
+    renderHome();
+    section("home");
+}
+
+function newParty() {
+    const d = new Date();
+
+    const p = {
+        id: makeId(),
+        name: "Our Girls' Party",
+        date: d.getFullYear() + "-" +
+              String(d.getMonth() + 1).padStart(2, "0") + "-" +
+              String(d.getDate()).padStart(2, "0"),
+        members: [],
+        expenses: [],
+        payments: []
+    };
+
+    parties.push(p);
+    save();
+    openParty(p.id);
+}
+
+function deleteParty(id) {
+    if (!confirm("Delete this party and all its bills and payments?")) return;
+
+    parties = parties.filter(p => p.id !== id);
+
+    if (current === id) current = null;
+
+    save();
+    renderHome();
+}
+
+function renderHome() {
+    $("partyList").innerHTML = parties.length
+        ? parties.map(raw => {
+            const p = normaliseParty(raw);
+            const total = p.expenses.reduce((s, e) => s + Number(e.amount || 0), 0);
+            const confirmed = p.expenses.filter(e => e.status === "confirmed").length;
+
+            return `
+                <div class="party">
+                    <small>${safe(p.date || "Date not set")}</small>
+                    <h3>${safe(p.name || "Untitled party")}</h3>
+                    <p class="notice">${p.members.length} girls · ${p.expenses.length} bills</p>
+                    <p>
+                        <span class="status confirmed">${confirmed} confirmed</span>
+                        <span class="status pending">${p.expenses.length - confirmed} pending</span>
+                    </p>
+                    <h2>${money(total)}</h2>
+                    <div class="row">
+                        <button class="btn small" onclick="openParty('${p.id}')">Open Party ↗</button>
+                        <button class="btn small danger" onclick="deleteParty('${p.id}')">Delete</button>
+                    </div>
+                </div>`;
+        }).join("")
+        : `<div class="empty" style="grid-column:1/-1">
+              <h2>No celebrations yet ♡</h2>
+              <p>Create your first party to organise expenses and payments.</p>
+           </div>`;
+
+    save();
+}
+
+function openParty(id) {
+    current = id;
+
+    if (!party()) return goHome();
+
+    normaliseParty(party());
+    renderEditor();
+    section("editor");
+}
+
+function updateDetails() {
+    const p = party();
+    if (!p) return;
+
+    p.name = $("pname").value.trim();
+    p.date = $("pdate").value;
+
+    $("partyTitle").textContent = p.name || "Untitled party";
+    save();
+}
+
+function addMember() {
+    const p = party();
+    const name = $("memberInput").value.trim();
+
+    if (!name) return alert("Enter a girl's name.");
+
+    if (p.members.some(m => m.toLowerCase() === name.toLowerCase())) {
+        return alert("This girl is already on the guest list.");
+    }
+
+    p.members.push(name);
+    $("memberInput").value = "";
+
+    save();
+    renderEditor();
+}
+
+function removeMember(i) {
+    const p = party();
+    const name = p.members[i];
+
+    if (
+        p.expenses.some(e => e.split.includes(name)) ||
+        p.payments.some(x => x.person === name)
+    ) {
+        return alert("This girl has recorded expenses or payments. Remove those records first.");
+    }
+
+    p.members.splice(i, 1);
+    save();
+    renderEditor();
+}
+
+function previewTotal() {
+    const price = Number($("unitPrice").value) || 0;
+    const q = Number($("quantity").value) || 0;
+
+    $("totalPreview").innerHTML =
+        Number.isInteger(q) && q >= 1
+            ? `${money(price)} × ${q} = <strong>${money(price * q)}</strong>`
+            : "Enter a valid whole-number quantity.";
+}
+
+function renderEditor() {
+    const p = normaliseParty(party());
+    if (!p) return;
+
+    $("partyTitle").textContent = p.name || "Untitled party";
+    $("pname").value = p.name || "";
+    $("pdate").value = p.date || "";
+
+    const cents = list => list.reduce((s, e) => s + Math.round(Number(e.amount || 0) * 100), 0);
+
+    const all = cents(p.expenses);
+    const confirmedExpenses = p.expenses.filter(e => e.status === "confirmed");
+    const pendingExpenses = p.expenses.filter(e => e.status !== "confirmed");
+    const confirmed = cents(confirmedExpenses);
+    const pending = cents(pendingExpenses);
+
+    $("total").textContent = money(all / 100);
+    $("confirmedTotal").textContent = money(confirmed / 100);
+    $("pendingTotal").textContent = money(pending / 100);
+    $("confirmedCount").textContent = confirmedExpenses.length + " / " + p.expenses.length;
+    $("expenseLabel").textContent = p.expenses.length + " items";
+
+    $("memberList").innerHTML = p.members.length
+        ? p.members.map((m, i) => `
+            <span class="person">${safe(m)}
+                <button title="Remove ${safe(m)}" onclick="removeMember(${i})">×</button>
+            </span>`).join("")
+        : `<p class="notice">Add your girls above to begin.</p>`;
+
+    $("splitMembers").innerHTML = p.members.length
+        ? p.members.map((m, i) => `
+            <label class="checklabel">
+                <input type="checkbox" class="splitCheck" value="${i}" checked>
+                ${safe(m)}
+            </label>`).join("")
+        : `<p class="notice">Add members before creating expenses.</p>`;
+
+    $("expenseRows").innerHTML = p.expenses.length
+        ? p.expenses.map(e => `
+            <tr>
+                <td>${safe(e.item)}</td>
+                <td><span class="tag">${safe(e.category)}</span></td>
+                <td>${money(e.unitPrice)} × ${e.quantity}</td>
+                <td><strong>${money(e.amount)}</strong></td>
+                <td>
+                    <select aria-label="Confirmation status for ${safe(e.item)}"
+                        onchange="changeStatus('${e.id}',this.value)">
+                        <option value="pending" ${e.status !== "confirmed" ? "selected" : ""}>Not Confirmed</option>
+                        <option value="confirmed" ${e.status === "confirmed" ? "selected" : ""}>Confirmed</option>
+                    </select>
+                    <div style="margin-top:6px">
+                        <span class="status ${e.status === "confirmed" ? "confirmed" : "pending"}">
+                            ${e.status === "confirmed" ? "✓ Confirmed" : "◷ Not Confirmed"}
+                        </span>
+                    </div>
+                </td>
+                <td><button class="btn small danger" onclick="removeExpense('${e.id}')">×</button></td>
+            </tr>`).join("")
+        : `<tr><td colspan="6" class="empty">No expenses added yet.</td></tr>`;
+
+    $("expenseGrandTotal").textContent = money(all / 100);
+    $("expenseConfirmedTotal").textContent = money(confirmed / 100);
+    $("expensePendingTotal").textContent = money(pending / 100);
+    $("expenseFinalTotal").textContent = money(all / 100);
+
+    renderPayments();
+    renderSettlements();
+}
+
+function changeStatus(id, status) {
+    const e = party().expenses.find(x => x.id === id);
+    if (!e) return;
+
+    e.status = status === "confirmed" ? "confirmed" : "pending";
+
+    save();
+    renderEditor();
+}
+
+function addExpense() {
+    const p = party();
+    const item = $("item").value.trim();
+    const price = Number($("unitPrice").value);
+    const quantity = Number($("quantity").value);
+
+    const split = [...document.querySelectorAll(".splitCheck:checked")]
+        .map(c => p.members[Number(c.value)])
+        .filter(Boolean);
+
+    if (!item) return alert("Enter an expense description.");
+    if (!Number.isFinite(price) || price <= 0) return alert("Enter a valid price per item.");
+    if (!Number.isInteger(quantity) || quantity < 1) return alert("Quantity must be a whole number of at least 1.");
+    if (!split.length) return alert("Select at least one girl to share this expense.");
+
+    const cents = Math.round(price * 100) * quantity;
+
+    if (!Number.isSafeInteger(cents)) return alert("This total is too large.");
+
+    p.expenses.push({
+        id: makeId(),
+        item,
+        unitPrice: Math.round(price * 100) / 100,
+        quantity,
+        amount: cents / 100,
+        split,
+        category: $("category").value,
+        status: $("itemStatus").value === "confirmed" ? "confirmed" : "pending"
+    });
+
+    save();
+
+    $("item").value = "";
+    $("unitPrice").value = "";
+    $("quantity").value = "1";
+    $("itemStatus").value = "pending";
+
+    previewTotal();
+    renderEditor();
+}
+
+function removeExpense(id) {
+    if (!confirm("Remove this expense?")) return;
+
+    const p = party();
+    p.expenses = p.expenses.filter(e => e.id !== id);
+
+    save();
+    renderEditor();
+}
+
+function addPayment() {
+    const p = party();
+    const person = $("moneyPerson").value;
+    const amount = Number($("moneyAmount").value);
+
+    if (!p.members.includes(person)) return alert("Add the girl to the guest list first.");
+    if (!Number.isFinite(amount) || amount <= 0) return alert("Enter a valid payment amount.");
+
+    p.payments.push({
+        id: makeId(),
+        person,
+        amount: Math.round(amount * 100) / 100
+    });
+
+    save();
+    $("moneyAmount").value = "";
+    renderEditor();
+}
+
+function removePayment(id) {
+    if (!confirm("Remove this payment record?")) return;
+
+    const p = party();
+    p.payments = p.payments.filter(x => x.id !== id);
+
+    save();
+    renderEditor();
+}
+
+function renderPayments() {
+    const p = party();
+
+    $("moneyPerson").innerHTML = p.members.length
+        ? p.members.map(m => `<option value="${safe(m)}">${safe(m)}</option>`).join("")
+        : `<option value="">Add girls first</option>`;
+
+    $("paymentRows").innerHTML = p.payments.length
+        ? p.payments.map(x => `
+            <tr>
+                <td>${safe(x.person)}</td>
+                <td>${money(x.amount)}</td>
+                <td><button class="btn small danger" onclick="removePayment('${x.id}')">×</button></td>
+            </tr>`).join("")
+        : `<tr><td colspan="3" class="empty">No payments recorded yet.</td></tr>`;
+
+    const total = p.payments.reduce((s, x) => s + Math.round(x.amount * 100), 0);
+    $("paymentsGrandTotal").textContent = money(total / 100);
+}
+
+function calculate() {
+    const p = party();
+
+    const balances = Object.fromEntries(p.members.map(m => [m, 0]));
+    const paid = Object.fromEntries(p.members.map(m => [m, 0]));
+    const shares = Object.fromEntries(p.members.map(m => [m, 0]));
+
+    for (const e of p.expenses.filter(e => e.status === "confirmed")) {
+        const cents = Math.round(Number(e.amount) * 100);
+        const members = [...new Set(e.split || [])].filter(m => p.members.includes(m));
+
+        if (!members.length) continue;
+
+        const base = Math.floor(cents / members.length);
+        const remainder = cents % members.length;
+
+        members.forEach((m, i) => {
+            shares[m] += base + (i < remainder ? 1 : 0);
+        });
+    }
+
+    for (const payment of p.payments) {
+        if (paid[payment.person] !== undefined) {
+            paid[payment.person] += Math.round(Number(payment.amount) * 100);
+        }
+    }
+
+    for (const m of p.members) {
+        balances[m] = paid[m] - shares[m];
+    }
+
+    const debtors = p.members
+        .filter(m => balances[m] < 0)
+        .map(name => ({ name, amount: -balances[name] }))
+        .sort((a, b) => b.amount - a.amount);
+
+    const creditors = p.members
+        .filter(m => balances[m] > 0)
+        .map(name => ({ name, amount: balances[name] }))
+        .sort((a, b) => b.amount - a.amount);
+
+    const transfers = [];
+    let i = 0, j = 0;
+
+    while (i < debtors.length && j < creditors.length) {
+        const amount = Math.min(debtors[i].amount, creditors[j].amount);
+
+        transfers.push({
+            from: debtors[i].name,
+            to: creditors[j].name,
+            amount
+        });
+
+        debtors[i].amount -= amount;
+        creditors[j].amount -= amount;
+
+        if (debtors[i].amount === 0) i++;
+        if (creditors[j].amount === 0) j++;
+    }
+
+    const confirmed = p.expenses.filter(e => e.status === "confirmed");
+    const pending = p.expenses.filter(e => e.status !== "confirmed");
+    const sum = list => list.reduce((s, e) => s + Math.round(Number(e.amount) * 100), 0);
+
+    return {
+        balances,
+        paid,
+        shares,
+        transfers,
+        totalExpenses: sum(confirmed),
+        pendingTotal: sum(pending),
+        totalPaid: Object.values(paid).reduce((s, n) => s + n, 0)
+    };
+}
+
+function settlementHTML() {
+    const p = party();
+    const c = calculate();
+
+    const rows = p.members.map(m => {
+        const b = c.balances[m];
+
+        const status = b > 0
+            ? `<span style="color:#276c45">Receives ${money(b / 100)}</span>`
+            : b < 0
+                ? `<span style="color:#a34242">Needs to pay ${money(-b / 100)}</span>`
+                : `<span style="color:#596477">Settled</span>`;
+
+        return `
+            <div class="settle">
+                <div class="row between">
+                    <strong>${safe(m)}</strong>
+                    <strong>${status}</strong>
+                </div>
+                <div class="notice" style="margin-top:7px">
+                    Paid: ${money(c.paid[m] / 100)} · Confirmed share: ${money(c.shares[m] / 100)}
+                </div>
+            </div>`;
+    }).join("");
+
+    const transfers = c.transfers.length
+        ? `<h3>Who pays whom?</h3>` + c.transfers.map(t => `
+            <div class="settle">
+                <strong>${safe(t.from)}</strong> pays
+                <strong>${safe(t.to)}</strong>
+                <strong style="float:right">${money(t.amount / 100)}</strong>
+            </div>`).join("")
+        : `<p class="notice">No outstanding transfers between members.</p>`;
+
+    const coverage = c.totalPaid < c.totalExpenses
+        ? `<span style="color:#a34242">Payments are short by ${money((c.totalExpenses - c.totalPaid) / 100)}.</span>`
+        : c.totalPaid > c.totalExpenses
+            ? `<span style="color:#a34242">Payments exceed confirmed expenses by ${money((c.totalPaid - c.totalExpenses) / 100)}. Check for duplicate or unrelated payments.</span>`
+            : `<span style="color:#276c45">Recorded payments cover confirmed expenses.</span>`;
+
+    return `
+        <div class="settle">
+            <div class="row between"><span>Confirmed expenses</span><strong>${money(c.totalExpenses / 100)}</strong></div>
+            <div class="row between"><span>Not confirmed (excluded)</span><strong>${money(c.pendingTotal / 100)}</strong></div>
+            <div class="row between"><span>Payments recorded</span><strong>${money(c.totalPaid / 100)}</strong></div>
+            <div style="margin-top:9px">${coverage}</div>
+        </div>
+        <h3>Each girl's balance</h3>
+        ${rows || `<p class="notice">Add party members to calculate shares.</p>`}
+        ${transfers}
+        <p class="notice">Only confirmed items are divided among their selected members.</p>`;
+}
+
+function renderSettlements() {
+    $("settlements").innerHTML = settlementHTML();
+}
+
+function showEditor() {
+    renderEditor();
+    section("editor");
+}
+
+function showSummary() {
+    const p = party();
+
+    if (!p) return alert("Open a party first.");
+
+    const c = calculate();
+    const all = p.expenses.reduce((s, e) => s + Math.round(Number(e.amount) * 100), 0);
+
+    $("sTitle").textContent = p.name || "Untitled party";
+
+    $("sDate").textContent = p.date
+        ? new Date(p.date + "T12:00:00").toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        })
+        : "Date not specified";
+
+    $("sTotal").textContent = money(all / 100);
+    $("sConfirmedTotal").textContent = money(c.totalExpenses / 100);
+    $("sPendingTotal").textContent = money(c.pendingTotal / 100);
+
+    $("sTotalFoot").textContent = money(all / 100);
+    $("sConfirmedFoot").textContent = money(c.totalExpenses / 100);
+    $("sPendingFoot").textContent = money(c.pendingTotal / 100);
+
+    $("sOverview").textContent =
+        `${p.members.length} guests · ${p.expenses.length} expense records · ` +
+        `${p.expenses.filter(e => e.status === "confirmed").length} confirmed items · ` +
+        `${p.payments.length} payment records. Total payments recorded: ${money(c.totalPaid / 100)}.`;
+
+    $("sExpenses").innerHTML = p.expenses.length
+        ? p.expenses.map(e => `
+            <tr>
+                <td>${safe(e.item)}</td>
+                <td>${safe(e.category)}</td>
+                <td>${money(e.unitPrice)} × ${e.quantity}</td>
+                <td>${money(e.amount)}</td>
+                <td>${e.status === "confirmed" ? "Confirmed" : "Not Confirmed"}</td>
+            </tr>`).join("")
+        : `<tr><td colspan="5" class="empty">No expenses recorded.</td></tr>`;
+
+    $("sPayments").innerHTML = p.payments.length
+        ? p.payments.map(x => `
+            <tr><td>${safe(x.person)}</td><td>${money(x.amount)}</td></tr>`).join("")
+        : `<tr><td colspan="2" class="empty">No payments recorded.</td></tr>`;
+
+    $("sPaymentsTotal").textContent = money(c.totalPaid / 100);
+
+    $("sMembers").innerHTML = p.members.length
+        ? p.members.map(m => {
+            const b = c.balances[m];
+            const status = b > 0
+                ? "Receives " + money(b / 100)
+                : b < 0
+                    ? "Owes " + money(-b / 100)
+                    : "Settled";
+
+            return `
+                <tr>
+                    <td>${safe(m)}</td>
+                    <td>${money(c.paid[m] / 100)}</td>
+                    <td>${money(c.shares[m] / 100)}</td>
+                    <td>${status}</td>
+                </tr>`;
+        }).join("")
+        : `<tr><td colspan="4" class="empty">No members added.</td></tr>`;
+
+    $("sSettlements").innerHTML = c.transfers.length
+        ? c.transfers.map(t => `
+            <div class="settle">
+                <strong>${safe(t.from)}</strong> pays
+                <strong>${safe(t.to)}</strong>
+                <strong style="float:right">${money(t.amount / 100)}</strong>
+            </div>`).join("")
+        : `<p class="notice">No outstanding transfers. Add members, confirmed expenses and payments to calculate settlements.</p>`;
+
+    $("sGenerated").textContent = new Date().toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+    });
+
+    section("summary");
+}
+
+function downloadSummary() {
+    showSummary();
+    setTimeout(() => window.print(), 100);
+}
+
+renderHome();
+previewTotal();
+</script>
+
+</body>
+</html>
